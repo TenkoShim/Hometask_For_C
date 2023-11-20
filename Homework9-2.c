@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-/*
+
 int read_int() {
 	int a;
 	scanf("%d", &a);
@@ -36,6 +36,7 @@ int* findSubArr(int arr1[],int arr2[],size_t len1,size_t len2) {
 			j = 0;
 		}
 	 }
+	return NULL;
 }
 
 int main() {
@@ -52,7 +53,5 @@ int main() {
 	printf("Enter elements of array two:\n");
 	scanArr(arr2, len2);
 	int* s = findSubArr(arr1, arr2, len1, len2);
-	int y = *s;
-	printf("%p\n", s);
-	printf("%d", y);
-}*/
+	printf("%p", s);
+}
