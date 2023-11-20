@@ -22,11 +22,9 @@ int* findInArr(int arr[], size_t len, int x) {
 	return NULL;
 }
 int* findSubArr(int arr1[],int arr2[],size_t len1,size_t len2) {
-	int j = 0;
-	int count = 0;
-	for (int i = 0; i < len1; i++) {
+	size_t j = 0;
+	for (size_t i = 0; i < len1; i++) {
 		if (arr1[i] == arr2[j]) {
-			count++;
 			j++;
 			if (j == len2) {
 				return findInArr(arr1, len1, arr2[0]);
