@@ -13,8 +13,8 @@ void scanArr(int arr[], size_t len) {
 		arr[i] = read_int();
 	}
 }
-int* findInArr(int arr[], size_t len, int x) {
-	for (size_t i = 0; i < len; i++) {
+int* findInArr(int arr[], size_t len, int x,size_t start) {
+	for (size_t i = start; i < len; i++) {
 		if (arr[i] == x) {
 			return &arr[i];
 		}
@@ -27,7 +27,7 @@ int* findSubArr(int arr1[],int arr2[],size_t len1,size_t len2) {
 		if (arr1[i] == arr2[j]) {
 			j++;
 			if (j == len2) {
-				return findInArr(arr1, len1, arr2[0]);
+				return findInArr(arr1, len1, arr2[0],(i+1)-len2);
 			}
 		}
 		else{
@@ -51,5 +51,5 @@ int main() {
 	printf("Enter elements of array two:\n");
 	scanArr(arr2, len2);
 	int* s = findSubArr(arr1, arr2, len1, len2);
-	printf("%p", s);
+	printf("%p\n", s);
 }
